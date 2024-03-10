@@ -1,5 +1,6 @@
 'use client';
 
+import { Spinner } from '@/components/spinner';
 import { Button } from '@/components/ui/button';
 import { SignInButton, UserButton } from '@clerk/clerk-react';
 import { useConvexAuth } from 'convex/react';
@@ -18,7 +19,7 @@ export default function Home() {
 				<h3 className='text-2xl font-bold'>Esto es facil, secillo y rapido</h3>
 				{isLoading && (
 					<div className='w-full flex items-center justify-center'>
-						<p>Cargando...</p>
+						<Spinner size='lg' />
 					</div>
 				)}
 				{!isAuthenticated && !isLoading && (
